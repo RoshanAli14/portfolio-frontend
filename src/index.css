@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+    :root {
+        --color-primary: 241 245 249;
+        /* Slate 100 (Light bg) */
+        --color-secondary: 255 255 255;
+        /* White (Light card) */
+        --color-accent: 56 189 248;
+        /* Sky 400 */
+        --color-text: 15 23 42;
+        /* Slate 900 (Dark text) */
+    }
+
+    .dark {
+        --color-primary: 15 23 42;
+        /* Slate 900 (Dark bg) */
+        --color-secondary: 30 41 59;
+        /* Slate 800 (Dark card) */
+        --color-accent: 56 189 248;
+        /* Sky 400 */
+        --color-text: 241 245 249;
+        /* Slate 100 (Light text) */
+    }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-primary text-text font-sans antialiased overflow-x-hidden;
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        @apply bg-primary;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        @apply bg-secondary rounded-full;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        @apply bg-accent/50;
+    }
+}
+
+@layer utilities {
+    .glass {
+        @apply bg-white/5 backdrop-blur-lg border border-white/10;
+    }
+
+    .glass-card {
+        @apply bg-secondary/50 backdrop-blur-md border border-gray-200 dark:border-white/5 shadow-xl shadow-purple-500/10 hover:shadow-purple-500/20 hover:border-accent/30 transition-all duration-300;
+    }
+
+    .text-gradient {
+        @apply bg-clip-text text-transparent bg-gradient-to-r from-accent to-purple-500;
+    }
+}
