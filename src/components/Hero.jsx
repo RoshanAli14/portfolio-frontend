@@ -35,7 +35,7 @@ export default function Hero() {
                         transition={{ delay: 0.2, duration: 0.8, ease: "easeOut" }}
                         className="text-xl md:text-3xl font-bold mb-6 leading-tight"
                     >
-                        Hi, I'm <br /> <span className="text-4xl md:text-6xl text-gradient">Roshan</span>
+                        Hi, I'm <br /> <span className="text-4xl md:text-6xl text-gradient">Roshan Ali</span>
                     </motion.h1>
                     <motion.h2
                         initial={{ opacity: 0, y: 40 }}
