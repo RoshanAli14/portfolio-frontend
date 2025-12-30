@@ -118,7 +118,7 @@ export default function Navbar() {
                     {/* Social Links */}
                     <div className="flex items-center gap-3 ml-2">
                         <a
-                            href="https://github.com/yourusername"
+                            href="https://github.com/RoshanAliChhina"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-600 dark:text-gray-300 hover:text-accent transition-colors"
@@ -194,7 +194,7 @@ export default function Navbar() {
                             {/* Mobile Social Links */}
                             <div className="flex items-center gap-4 pt-4 border-t border-white/10">
                                 <a
-                                    href="https://github.com/yourusername"
+                                    href="https://github.com/RoshanAliChhina"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-white/10 text-gray-600 dark:text-gray-300 hover:text-accent transition-colors"
