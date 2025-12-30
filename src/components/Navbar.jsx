@@ -46,11 +46,23 @@ export default function Navbar() {
 
     const handleNavClick = (e, href) => {
         e.preventDefault();
-        const element = document.querySelector(href);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            setIsOpen(false); // Close mobile menu
-        }
+        setIsOpen(false); // Close mobile menu first
+
+        // Timeout to allow menu animation to start closing before scrolling
+        setTimeout(() => {
+            const id = href.replace('#', '');
+            const element = document.getElementById(id);
+            if (element) {
+                const navHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - navHeight;
+
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }, 100);
     };
 
     const navLinks = [
@@ -79,8 +91,8 @@ export default function Navbar() {
                             href={link.href}
                             onClick={(e) => handleNavClick(e, link.href)}
                             className={`text-sm font-medium tracking-wide transition-all duration-300 ease-in-out hover:scale-110 relative ${activeSection === link.href.substring(1)
-                                    ? 'text-accent font-bold'
-                                    : 'text-gray-600 dark:text-gray-300 hover:text-accent'
+                                ? 'text-accent font-bold'
+                                : 'text-gray-600 dark:text-gray-300 hover:text-accent'
                                 }`}
                         >
                             {link.name}
@@ -171,8 +183,8 @@ export default function Navbar() {
                                     href={link.href}
                                     onClick={(e) => handleNavClick(e, link.href)}
                                     className={`text-base font-medium transition-colors ${activeSection === link.href.substring(1)
-                                            ? 'text-accent font-bold'
-                                            : 'text-gray-600 dark:text-gray-300 hover:text-accent'
+                                        ? 'text-accent font-bold'
+                                        : 'text-gray-600 dark:text-gray-300 hover:text-accent'
                                         }`}
                                 >
                                     {link.name}
